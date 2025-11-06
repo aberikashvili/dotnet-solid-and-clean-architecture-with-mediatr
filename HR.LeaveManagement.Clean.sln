@@ -20,6 +20,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Persiste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Infrastructure", "HR.LeaveManagement.Infrastructure\HR.LeaveManagement.Infrastructure.csproj", "{1776815F-CCF0-4D9D-86E3-B31157747FAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Api", "HR.LeaveManagement.Api\HR.LeaveManagement.Api.csproj", "{42C8FB37-7497-4BB3-BCC1-F177E7EA4428}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD4EBACB-1DAE-4BCC-AA7F-017F0B658257}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +41,7 @@ Global
 		{81F5D5B4-B40C-44FF-8195-1A246F808F32} = {2E372449-98C3-4A2D-9DB8-3E6853A8EB8F}
 		{CBDEEEA7-049D-4EB0-AAA5-31C5CC8F72FD} = {A7FACDE6-A76A-40A4-AE93-5C9083DE9567}
 		{1776815F-CCF0-4D9D-86E3-B31157747FAB} = {A7FACDE6-A76A-40A4-AE93-5C9083DE9567}
+		{42C8FB37-7497-4BB3-BCC1-F177E7EA4428} = {39C26B62-0A3B-4E50-A428-0A6DA7D18408}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D0109A61-6D21-4186-AD96-80F2F48A748C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -52,5 +60,9 @@ Global
 		{1776815F-CCF0-4D9D-86E3-B31157747FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1776815F-CCF0-4D9D-86E3-B31157747FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1776815F-CCF0-4D9D-86E3-B31157747FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C8FB37-7497-4BB3-BCC1-F177E7EA4428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C8FB37-7497-4BB3-BCC1-F177E7EA4428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C8FB37-7497-4BB3-BCC1-F177E7EA4428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C8FB37-7497-4BB3-BCC1-F177E7EA4428}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

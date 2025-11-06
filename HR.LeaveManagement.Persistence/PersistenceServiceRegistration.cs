@@ -13,7 +13,8 @@ public static class PersistenceServiceRegistration
         IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("HrDatabaseConnectionString");
-        services.AddDbContext<HrDatabaseContext>(option => option.UseSqlServer(connectionString));
+        services.AddDbContext<HrDatabaseContext>(option =>
+            option.UseNpgsql(connectionString));
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();

@@ -1,0 +1,44 @@
+﻿services:
+  hr.leavemanagement.api:
+    image: hr.leavemanagement.api
+    build:
+      context: .
+      dockerfile: HR.LeaveManagement.Api/Dockerfile
+    depends_on:
+      - postgresql
+    ports:
+      - "5101:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__HrDatabaseConnectionString=Host=postgresql;Port=5432;Database=db_hr_leavemanagement;Username=postgres;Password=$$tr0ngS@P@ssw0rd02;Pooling=true;Timeout=5
+    networks:
+      - appnet
+      
+  postgresql:
+    image: postgres:18
+    platform: linux/amd64
+    container_name: hr-postgres
+    restart: always
+    # you can omit ports if only containers need access
+    ports:
+      - "5434:5432"        # optional: avoid 5432 conflict on host
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=$$tr0ngS@P@ssw0rd02
+    volumes:
+      - postgresql_data:/var/lib/postgresql
+    networks:
+      - appnet
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgresql_data:
+
+networks:
+  appnet:
+    driver: bridge
